@@ -119,6 +119,7 @@
     "karma-coverage": "^1.1.1",
     "karma-jasmine": "~1.1.0",
     "karma-mocha-reporter": "^2.2.5",
+    "karma-phantomjs-launcher": "^1.0.4",
     "karma-remap-istanbul": "^0.6.0",
     "merge-stream": "^1.0.1",
     "minimatch": "^3.0.4",
