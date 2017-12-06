@@ -1,6 +1,7 @@
 import { join } from 'path';
 
 import { SeedConfig } from './seed.config';
+import {ExtendPackages} from "./seed.config.interfaces";
 // import { ExtendPackages } from './seed.config.interfaces';
 
 /**
@@ -24,6 +25,8 @@ export class ProjectConfig extends SeedConfig {
       ...this.NPM_DEPENDENCIES,
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       // {src: 'lodash/lodash.min.js', inject: 'libs'},
+      { src: 'primeng/resources/primeng.css', inject: true },
+      { src: 'primeng/resources/themes/voclain/theme.css', inject: true },
     ];
 
     // Add `local` third-party libraries to be injected/bundled.
@@ -50,6 +53,15 @@ export class ProjectConfig extends SeedConfig {
     // }];
     //
     // this.addPackagesBundles(additionalPackages);
+    let additionalPackages: ExtendPackages[] = [{
+      name: 'primeng',
+      path: 'node_modules/primeng',
+      packageMeta: {
+        defaultExtension: 'js'
+      }
+    }];
+
+    this.addPackagesBundles(additionalPackages);
 
     /* Add proxy middleware */
     // this.PROXY_MIDDLEWARE = [
@@ -59,5 +71,17 @@ export class ProjectConfig extends SeedConfig {
     /* Add to or override NPM module configurations: */
     // this.PLUGIN_CONFIGS['browser-sync'] = { ghostMode: false };
   }
+
+  // Add build sequence for PrimeNG theme
+  PRIME_NG_THEME = 'voclain';
+  CSS_IMAGE_DEST = `${this.CSS_DEST}/images`;
+  CSS_IMAGE_SRC = [
+    'node_modules/primeng/resources/themes/' + this.PRIME_NG_THEME + '/images/**'
+  ];
+
+  THEME_FONTS_DEST = `${this.APP_DEST}/css/fonts`;
+  THEME_FONTS_SRC = [
+    'node_modules/primeng/resources/themes/' + this.PRIME_NG_THEME + '/fonts/**',
+  ];
 
 }
