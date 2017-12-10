@@ -5,7 +5,7 @@ import { ProducerComponent } from './producer.component';
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: 'producer', component: ProducerComponent }
+      { path: '', component: ProducerComponent }
     ])
   ],
   exports: [RouterModule]

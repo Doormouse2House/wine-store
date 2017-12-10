@@ -1,3 +1,20 @@
-p {
-  font-size: 16pt;
+:host {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.87);
+  display: block;
+  height: 48px;
+  padding: 4px 16px;
+}
+
+h1 {
+  display: inline;
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 0.1px;
+  line-height: 48px;
+}
+
+.producer {
+  margin: auto;
+  text-align: center;
 }

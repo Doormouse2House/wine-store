@@ -5,15 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AboutModule } from './about/about.module';
-import { HomeModule } from './home/home.module';
 import { ProducerModule } from './producer/producer.module';
 import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, AboutModule, HomeModule,
-    ProducerModule, SharedModule.forRoot()],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ProducerModule, SharedModule.forRoot()],
   declarations: [AppComponent],
   providers: [{
     provide: APP_BASE_HREF,
