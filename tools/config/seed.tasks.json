@@ -37,6 +37,8 @@
     "build.css_images",
     "build.theme_fonts",
     "build.html_css",
+    "build.theme_fonts",
+    "build.css_images",
     "copy.prod",
     "build.js.prod",
     "build.bundles",
