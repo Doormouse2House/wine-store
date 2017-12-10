@@ -1,10 +1,10 @@
 {
-  "name": "angular-seed",
-  "version": "1.0.0",
-  "description": "Modular starter project for Angular 2 (and beyond) with statically typed build and AoT compilation",
+  "name": "Wine Store",
+  "version": "0.0.1",
+  "description": "MVP Wine Store",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mgechev/angular-seed"
+    "url": "https://github.com/Doormouse2House/wine-store"
   },
   "scripts": {
     "build.tools": "tsc && gulp build.tools --color",
@@ -48,11 +48,11 @@
     "compodoc": "./node_modules/.bin/compodoc -p src/client/tsconfig.json",
     "serve.compodoc": "./node_modules/.bin/compodoc -s"
   },
-  "author": "Minko Gechev <mgechev>",
+  "author": "Graham <Doorhouse2Mouse>",
   "license": "MIT",
   "engines": {
-    "node": ">=6.9.0",
-    "npm": ">=3.10.3"
+    "node": ">=6.11.5",
+    "npm": ">=3.10.10"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^5.0.1",
