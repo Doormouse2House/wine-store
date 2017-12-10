@@ -479,7 +479,6 @@ export class SeedConfig {
   SYSTEM_CONFIG_DEV: any = {
     paths: {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
-      'primeng': `${this.APP_BASE}node_modules/primeng`,
       '@angular/animations':
         'node_modules/@angular/animations/bundles/animations.umd.js',
       '@angular/platform-browser/animations':
