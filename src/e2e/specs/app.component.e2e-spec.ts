@@ -8,7 +8,7 @@ describe('App', () => {
 
   it('should have a title', async () => {
     const title = await browser.getTitle();
-    expect(title).toEqual('Welcome to angular-seed!');
+    expect(title).toEqual('Lilac Wine Database');
   });
 
   it('should have <nav>', async () => {
@@ -18,12 +18,7 @@ describe('App', () => {
 
   it('should have correct nav text for Home', async () => {
     const text = await element(by.css('sd-app sd-navbar nav a:first-child')).getText();
-    expect(text).toEqual('HOME');
-  });
-
-  it('should have correct nav text for About', async () => {
-    const text = await element(by.css('sd-app sd-navbar nav a:nth-child(2)')).getText();
-    expect(text).toEqual('ABOUT');
+    expect(text).toEqual('Details');
   });
 
 });

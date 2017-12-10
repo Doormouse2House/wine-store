@@ -348,7 +348,7 @@ Forks of this project demonstrate how to extend and integrate with other librari
 │       ├── app
 │       │   ├── about
 │       │   │   ├── about.component.css
-│       │   │   ├── about.component.e2e-spec.ts
+│       │   │   ├── about.component.e2e-ignore.ts
 │       │   │   ├── about.component.html
 │       │   │   ├── about.component.spec.ts
 │       │   │   ├── about.component.ts

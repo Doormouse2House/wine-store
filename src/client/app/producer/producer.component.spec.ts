@@ -26,8 +26,8 @@ export function main() {
             const producerInstance = fixture.debugElement.componentInstance;
             const producerDOME1 = fixture.debugElement.nativeElement;
 
-            expect(producerDOME1.querySelectorAll('p').length).toEqual(1);
-            // expect(producerDOME1.querySelectorAll('p').length).toEqual(1);
+            expect(producerDOME1.querySelectorAll('div').length).toEqual(1);
+            expect(producerDOME1.querySelectorAll('h1')[0].textContent).toEqual('Producer');
           });
       })
     );
