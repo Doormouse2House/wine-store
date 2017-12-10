@@ -1,7 +1,7 @@
 import { join } from 'path';
 
 import { SeedConfig } from './seed.config';
-import {ExtendPackages} from "./seed.config.interfaces";
+import { ExtendPackages } from './seed.config.interfaces';
 // import { ExtendPackages } from './seed.config.interfaces';
 
 /**
@@ -11,6 +11,18 @@ import {ExtendPackages} from "./seed.config.interfaces";
 export class ProjectConfig extends SeedConfig {
 
   PROJECT_TASKS_DIR = join(process.cwd(), this.TOOLS_DIR, 'tasks', 'project');
+
+  // Add build sequence for PrimeNG theme
+  PRIME_NG_THEME = 'voclain';
+  CSS_IMAGE_DEST = `${this.CSS_DEST}/images`;
+  CSS_IMAGE_SRC = [
+    'node_modules/primeng/resources/themes/' + this.PRIME_NG_THEME + '/images/**'
+  ];
+
+  THEME_FONTS_DEST = `${this.APP_DEST}/css/fonts`;
+  THEME_FONTS_SRC = [
+    'node_modules/primeng/resources/themes/' + this.PRIME_NG_THEME + '/fonts/**',
+  ];
 
   constructor() {
     super();
@@ -53,7 +65,7 @@ export class ProjectConfig extends SeedConfig {
     // }];
     //
     // this.addPackagesBundles(additionalPackages);
-    let additionalPackages: ExtendPackages[] = [{
+    const additionalPackages: ExtendPackages[] = [{
       name: 'primeng',
       path: 'node_modules/primeng',
       packageMeta: {
@@ -71,17 +83,5 @@ export class ProjectConfig extends SeedConfig {
     /* Add to or override NPM module configurations: */
     // this.PLUGIN_CONFIGS['browser-sync'] = { ghostMode: false };
   }
-
-  // Add build sequence for PrimeNG theme
-  PRIME_NG_THEME = 'voclain';
-  CSS_IMAGE_DEST = `${this.CSS_DEST}/images`;
-  CSS_IMAGE_SRC = [
-    'node_modules/primeng/resources/themes/' + this.PRIME_NG_THEME + '/images/**'
-  ];
-
-  THEME_FONTS_DEST = `${this.APP_DEST}/css/fonts`;
-  THEME_FONTS_SRC = [
-    'node_modules/primeng/resources/themes/' + this.PRIME_NG_THEME + '/fonts/**',
-  ];
 
 }

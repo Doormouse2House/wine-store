@@ -1,9 +1,9 @@
 import {
   async,
   TestBed
-} from '@angular/core/testing'
+} from '@angular/core/testing';
 
-import { ProducerComponent } from './producer.component'
+import { ProducerComponent } from './producer.component';
 
 export function main() {
   describe('Producer component', () => {
@@ -28,9 +28,9 @@ export function main() {
 
             expect(producerDOME1.querySelectorAll('p').length).toEqual(1);
             // expect(producerDOME1.querySelectorAll('p').length).toEqual(1);
-          })
+          });
       })
-    )
+    );
 
-  })
+  });
 }
