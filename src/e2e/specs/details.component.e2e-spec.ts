@@ -16,6 +16,17 @@ describe('Details', () => {
     expect(text).toEqual('Details');
   });
 
+  it('should have a span for the region', async () => {
+    const present = await element(by.css('span.region-content')).isPresent();
+    expect(present).toEqual(true);
+  });
+
+
+  it('should have a span for the appellation', async () => {
+    const present = await element(by.css('span.appellation-content')).isPresent();
+    expect(present).toEqual(true);
+  });
+
   it('should have a span for the owner', async () => {
     const present = await element(by.css('span.owner-content')).isPresent();
     expect(present).toEqual(true);
