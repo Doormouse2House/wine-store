@@ -17,4 +17,28 @@ h1 {
 .heading {
   margin: auto;
   text-align: center;
+  height: 27px;
+}
+
+.contact {
+  border: 1px solid #e1e1e1;
+  padding: 5px 5px 5px 43px;
+  margin-right: 43px;
+}
+
+span.add-contact {
+  float: right !important;
+  margin-top: -10px;
+}
+
+span.address-book {
+  margin-left: -43px;
+}
+
+span.fa-stack {
+  height: 100%;
+}
+
+.fa-plus-circle:hover {
+  color: green
 }
