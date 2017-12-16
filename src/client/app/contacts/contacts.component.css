@@ -39,6 +39,10 @@ span.fa-stack {
   height: 100%;
 }
 
-.fa-plus-circle:hover {
+.fa-plus-circle {
   color: green
+}
+
+.fa-plus-circle:hover {
+  color: #004d00;
 }

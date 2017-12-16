@@ -23,3 +23,35 @@ h1 {
   float: left;
   width: 50%;
 }
+
+/* Edit Producer button */
+span.edit-producer {
+  float: left !important;
+  margin-top: 5px;
+}
+
+.fa-pencil-square-o {
+  color: red;
+}
+
+.fa-pencil-square-o:hover {
+  color: #660000;
+}
+
+
+/* Add Producer button */
+
+span.add-producer {
+  float: right !important;
+  margin-top: 5px;
+}
+
+.fa-plus-circle {
+  color: green
+}
+
+.fa-plus-circle:hover {
+  color: #004d00;
+}
+
+/* END */
