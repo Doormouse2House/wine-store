@@ -24,6 +24,10 @@ export class ProjectConfig extends SeedConfig {
     'node_modules/primeng/resources/themes/' + this.PRIME_NG_THEME + '/fonts/**',
   ];
 
+  // Add FontAwesome
+  FONTS_DEST = `${this.APP_DEST}/fonts`;
+  FONTS_SRC = ['node_modules/font-awesome/fonts/**'];
+
   constructor() {
     super();
     this.APP_TITLE = 'Lilac Wine Database';
@@ -39,6 +43,7 @@ export class ProjectConfig extends SeedConfig {
       // {src: 'lodash/lodash.min.js', inject: 'libs'},
       { src: 'primeng/resources/primeng.css', inject: true },
       { src: 'primeng/resources/themes/voclain/theme.css', inject: true },
+      { src: 'font-awesome/css/font-awesome.min.css', inject: true },
     ];
 
     // Add `local` third-party libraries to be injected/bundled.
