@@ -17,6 +17,8 @@ import { ProducerComponent } from './producer/producer.component';
 import { ToolbarComponent } from './shared/toolbar/toolbar.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SearchbarComponent } from './shared/searchbar/searchbar.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { ProducerNameComponent } from './producerName/producerName.component';
 
 export function main() {
 
@@ -27,9 +29,10 @@ export function main() {
     ];
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [FormsModule, RouterTestingModule.withRoutes(config)],
+        imports: [RouterTestingModule.withRoutes(config)],
         declarations: [TestComponent, ToolbarComponent, SearchbarComponent,
-          NavbarComponent, AppComponent, ProducerComponent],
+          NavbarComponent, AppComponent, ProducerComponent, ContactsComponent,
+          ProducerNameComponent],
         providers: [
           { provide: APP_BASE_HREF, useValue: '/' }
         ]
