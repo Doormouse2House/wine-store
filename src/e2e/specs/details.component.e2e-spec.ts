@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-describe('ProducerName', () => {
+describe('Details', () => {
 
   beforeEach(async () => {
     return await browser.get('/');

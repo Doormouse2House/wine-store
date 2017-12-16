@@ -6,10 +6,12 @@ import { ProducerRoutingModule } from './producer-routing.module';
 import { ProducerNameModule } from '../producerName/producerName.module';
 import { ContactsModule } from '../contacts/contacts.module';
 import { DetailsModule } from '../details/details.module';
+import { DescriptionModule } from '../description/description.module';
 
 
 @NgModule({
-  imports: [CommonModule, ProducerRoutingModule, ProducerNameModule, ContactsModule, DetailsModule],
+  imports: [CommonModule, ProducerRoutingModule, ProducerNameModule, ContactsModule, DetailsModule,
+  DescriptionModule],
   declarations: [ProducerComponent],
   exports: [ProducerComponent],
 })
