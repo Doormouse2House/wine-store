@@ -4,10 +4,8 @@ import {
 } from '@angular/core/testing';
 
 import { ProducerComponent } from './producer.component';
-import { ContactsModule } from '../contacts/contacts.module';
-import { ProducerNameModule } from '../producerName/producerName.module';
-import {ContactsComponent} from "../contacts/contacts.component";
-import {ProducerNameComponent} from "../producerName/producerName.component";
+import { ContactsComponent } from '../contacts/contacts.component';
+import { ProducerNameComponent } from '../producerName/producerName.component';
 
 export function main() {
   describe('Producer component', () => {
