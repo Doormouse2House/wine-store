@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { ProducerComponent } from './producer.component';
 import { ProducerRoutingModule } from './producer-routing.module';
-import { AccordionModule, ButtonModule } from 'primeng/primeng';
 import { ProducerNameModule } from '../producerName/producerName.module';
+import { ContactsModule } from '../contacts/contacts.module';
 
 
 @NgModule({
-  imports: [CommonModule, ProducerRoutingModule, ButtonModule, AccordionModule, ProducerNameModule],
+  imports: [CommonModule, ProducerRoutingModule, ProducerNameModule, ContactsModule],
   declarations: [ProducerComponent],
   exports: [ProducerComponent],
 })
