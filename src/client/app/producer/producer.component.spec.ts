@@ -6,6 +6,7 @@ import {
 import { ProducerComponent } from './producer.component';
 import { ContactsComponent } from '../contacts/contacts.component';
 import { ProducerNameComponent } from '../producerName/producerName.component';
+import { DetailsComponent } from '../details/details.component';
 
 export function main() {
   describe('Producer component', () => {
@@ -14,7 +15,7 @@ export function main() {
 
       TestBed.configureTestingModule({
         imports: [],
-        declarations: [ProducerComponent, ContactsComponent, ProducerNameComponent],
+        declarations: [ProducerComponent, ContactsComponent, ProducerNameComponent, DetailsComponent],
       });
 
     });

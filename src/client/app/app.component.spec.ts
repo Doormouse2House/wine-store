@@ -19,6 +19,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SearchbarComponent } from './shared/searchbar/searchbar.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ProducerNameComponent } from './producerName/producerName.component';
+import { DetailsComponent } from './details/details.component';
 
 export function main() {
 
@@ -32,7 +33,7 @@ export function main() {
         imports: [RouterTestingModule.withRoutes(config)],
         declarations: [TestComponent, ToolbarComponent, SearchbarComponent,
           NavbarComponent, AppComponent, ProducerComponent, ContactsComponent,
-          ProducerNameComponent],
+          ProducerNameComponent, DetailsComponent],
         providers: [
           { provide: APP_BASE_HREF, useValue: '/' }
         ]

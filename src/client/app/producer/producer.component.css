@@ -18,3 +18,8 @@ h1 {
   margin: auto;
   text-align: center;
 }
+
+.ui-datagrid-column {
+  float: left;
+  width: 50%;
+}
