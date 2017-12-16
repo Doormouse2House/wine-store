@@ -1,20 +1,19 @@
 :host {
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
   color: rgba(0, 0, 0, 0.87);
   display: block;
-  height: 48px;
-  padding: 4px 16px;
+  padding: 4px 16px 14px;
+  border: 1px solid #e1e1e1;
 }
 
 h1 {
   display: inline;
-  font-size: 25px;
+  font-size: 15px;
   font-weight: normal;
   letter-spacing: 0.1px;
-  line-height: 48px;
 }
 
-.producer {
+.heading {
   margin: auto;
   text-align: center;
 }
