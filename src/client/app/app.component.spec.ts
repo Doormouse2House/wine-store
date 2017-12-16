@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { TestBed } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 
@@ -20,6 +19,7 @@ import { SearchbarComponent } from './shared/searchbar/searchbar.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ProducerNameComponent } from './producerName/producerName.component';
 import { DetailsComponent } from './details/details.component';
+import { DescriptionComponent } from './description/description.component';
 
 export function main() {
 
@@ -33,7 +33,7 @@ export function main() {
         imports: [RouterTestingModule.withRoutes(config)],
         declarations: [TestComponent, ToolbarComponent, SearchbarComponent,
           NavbarComponent, AppComponent, ProducerComponent, ContactsComponent,
-          ProducerNameComponent, DetailsComponent],
+          ProducerNameComponent, DetailsComponent, DescriptionComponent],
         providers: [
           { provide: APP_BASE_HREF, useValue: '/' }
         ]
