@@ -20,6 +20,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ProducerNameComponent } from './producerName/producerName.component';
 import { DetailsComponent } from './details/details.component';
 import { DescriptionComponent } from './description/description.component';
+import { FormsModule } from '@angular/forms';
 
 export function main() {
 
@@ -30,7 +31,7 @@ export function main() {
     ];
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RouterTestingModule.withRoutes(config)],
+        imports: [RouterTestingModule.withRoutes(config), FormsModule],
         declarations: [TestComponent, ToolbarComponent, SearchbarComponent,
           NavbarComponent, AppComponent, ProducerComponent, ContactsComponent,
           ProducerNameComponent, DetailsComponent, DescriptionComponent],

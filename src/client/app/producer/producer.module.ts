@@ -15,4 +15,8 @@ import { DescriptionModule } from '../description/description.module';
   declarations: [ProducerComponent],
   exports: [ProducerComponent],
 })
-export class ProducerModule { }
+export class ProducerModule {
+  id: number;
+  name: string;
+  region: string;
+}
