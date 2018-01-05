@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { SearchbarService } from './searchbar.service';
+import { ProducerModule } from '../../producer/producer.module';
 
 
 /**
@@ -13,32 +14,32 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['searchbar.component.css'],
 })
 export class SearchbarComponent {
-  producer = '';
-
-  constructor(private http: HttpClient) {}
+  errorMessage: string;
+  producers: ProducerModule[] = [];
 
   /**
-   * Returns an Observable for the HTTP GET request for the JSON resource.
-   * @return {string[]} The Observable for the HTTP request.
+   * Creates an instance of the SearchbarComponent with the injected
+   * SearchbarService.
+   *
+   * @param {SearchbarService} searchbarService - The injected SearchbarService.
    */
-  search(value: String): Observable<string[]> {
-    return this.http.get('localhost:1337/producer?name=' + value)
-      .catch(this.handleError);
+  constructor(public searchbarService: SearchbarService) {}
+
+  /**
+   * Handle the searchbarService observable
+   */
+  searchProducers(term: string) {
+    this.searchbarService.searchProducer(term)
+      .subscribe(
+        producers => this.producers = producers,
+        error => this.errorMessage = <any>error
+      );
   }
 
   // TODO: API calls should be via a service!  Also, need to sort out the X-domain call above
   onSearchChange( event: any ) {
-    let searchResults: Observable<string[]>;
-
     // console.info('changed: ' + event.target.value);
-    searchResults = this.search(event.target.value);
-
-    searchResults.subscribe(producer => {
-        console.log(producer);
-      }, err => {
-        console.error(err);
-      }
-    );
+    this.searchProducers(event.target.value);
   }
 
   /**

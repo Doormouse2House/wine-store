@@ -1,5 +1,6 @@
 <div class="ui-inputgroup">
-  <input type="text" [ngModel]="producer" (keyup)="onSearchChange($event)"
+  <input type="text" (keyup)="onSearchChange($event)"
          pInputText placeholder="Keyword">
   <button pButton type="button" label="Search">Search</button>
+  <div>{{ producers[0].name }}</div>
 </div>
