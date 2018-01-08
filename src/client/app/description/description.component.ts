@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProducerModule } from '../producer/producer.module';
 
 /**
  * This class represents the lazy loaded DescriptionComponent.
@@ -9,4 +10,6 @@ import { Component } from '@angular/core';
   templateUrl: 'description.component.html',
   styleUrls: ['description.component.css'],
 })
-export class DescriptionComponent {}
+export class DescriptionComponent {
+  @Input() producer: ProducerModule;
+}

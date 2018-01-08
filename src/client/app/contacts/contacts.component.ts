@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProducerModule } from '../producer/producer.module';
 
 /**
  * This class represents the lazy loaded ContactsComponent.
@@ -9,4 +10,6 @@ import { Component } from '@angular/core';
   templateUrl: 'contacts.component.html',
   styleUrls: ['contacts.component.css'],
 })
-export class ContactsComponent {}
+export class ContactsComponent {
+  @Input() producer: ProducerModule;
+}

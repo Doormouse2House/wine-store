@@ -3,16 +3,15 @@
     <h1>Producer</h1>
   </div>
   <div class="name">
-    <h2>Societa Agricola La Dama</h2>
+    <h2 *ngIf="producer">{{producer.name}}</h2>
   </div>
   <div class="address">
-    <p>4234 frazione San Vito,<br>
-      Via G. Quintarelli 39</p>
+    <p *ngIf="producer">{{producer.address}}</p>
   </div>
   <div class="producerWeb">
     <span class="fa-stack fa-lg">
       <i class="fa fa-home fa-stack-1x"></i>
     </span>
-    <a href="http://www.ladamavini.it">www.ladamavini.it</a>
+    <a *ngIf="producer" href="{{producer.web_address}}">{{producer.web_address}}</a>
   </div>
 </div>

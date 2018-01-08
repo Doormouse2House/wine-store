@@ -4,26 +4,26 @@
   </div>
   <div class="region">
     Region:
-    <span class="region-content">Valpolicella Classico</span>
+    <span *ngIf="producer" class="region-content">{{producer.region}}</span>
   </div>
   <div class="appellation">
     Appellation:
-    <span class="appellation-content">DOCG</span>
+    <span *ngIf="producer" class="appellation-content">{{producer.appellation}}</span>
   </div>
   <div class="owner">
     Owner:
-    <span class="owner-content">Gabriele Qualcosa</span>
+    <span *ngIf="producer" class="owner-content">{{producer.owner}}</span>
   </div>
   <div class="enologist">Enologist:
-    <span class="enologist-content">Someone Else</span>
+    <span *ngIf="producer" class="enologist-content">{{producer.enologist}}</span>
   </div>
   <div class="agricultural-lead">Agricultural Lead:
-    <span class="agricultural-lead-content">Gabriele Qualcosa</span>
+    <span *ngIf="producer" class="agricultural-lead-content">{{producer.agricultural_lead}}</span>
   </div>
   <div class="planted-hectares">Planted Hectares:
-    <span class="planted-hectares-amount">12</span>
+    <span *ngIf="producer" class="planted-hectares-amount">{{producer.planted_hectares}}</span>
   </div>
   <div class="production">Total bottle production per annum:
-    <span class="production-amount">8000</span>
+    <span *ngIf="producer" class="production-amount">{{producer.total_production}}</span>
   </div>
 </div>

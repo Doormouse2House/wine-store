@@ -53,6 +53,10 @@ tmp
 gulpfile.js
 gulpfile.js.map
 
+# Don't need the compiled JS files
+src/**/*.js
+src/**/*.js.map
+
 # OS X trash files
 .DS_Store
 src/client/app/shared/config/env.config.js

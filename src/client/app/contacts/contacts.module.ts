@@ -10,4 +10,9 @@ import { ButtonModule } from 'primeng/primeng';
   declarations: [ContactsComponent],
   exports: [ContactsComponent],
 })
-export class ContactsModule { }
+export class ContactsModule {
+  name: string;
+  position: string;
+  email_address: string;
+  telephone_number: string;
+}

@@ -8,10 +8,10 @@
   </span>
 </div>
 <div id="col1" class="ui-datagrid-column">
-  <sd-producer-name></sd-producer-name>
-  <sd-contacts></sd-contacts>
+  <sd-producer-name [producer]="selectedProducer"></sd-producer-name>
+  <sd-contacts [producer]="selectedProducer"></sd-contacts>
 </div>
 <div id="col2" class="ui-datagrid-column">
-  <sd-details></sd-details>
-  <sd-description></sd-description>
+  <sd-details [producer]="selectedProducer"></sd-details>
+  <sd-description [producer]="selectedProducer"></sd-description>
 </div>

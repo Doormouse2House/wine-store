@@ -5,40 +5,25 @@
       <i class="fa fa-plus-circle fa-stack-1x"></i>
     </span>
   </div>
-  <div class="contact">
-    <span class="address-book fa-stack fa-lg">
-      <i class="fa fa-address-book fa-stack-1x"></i>
-    </span>
-    <div class="name">
-      Name:
-      <span class="name-content">Gabriele Qualcosa</span>
+  <ng-container *ngIf="producer">
+    <div class="contact" *ngFor="let contact of producer.contacts; let i = index"
+    [attr.data-index]="i">
+      <span class="address-book fa-stack fa-lg">
+        <i class="fa fa-address-book fa-stack-1x"></i>
+      </span>
+      <div class="name">
+        Name:
+        <span class="name-content">{{contact.name}}</span>
+      </div>
+      <div class="position">Position:
+        <span class="position-content">{{contact.position}}</span>
+      </div>
+      <div class="email">Email:
+        <a href="mailto:{{contact.email_address}}" class="email-content">{{contact.email_address}}</a>
+      </div>
+      <div class="phone">Phone:
+        <span class="phone-content">{{contact.telephone_number}}</span>
+      </div>
     </div>
-    <div class="position">Position:
-      <span class="position-content">Owner</span>
-    </div>
-    <div class="email">Email:
-      <a href="mailto:something@ladamavini.it" class="email-content">something@ladamavini.it</a>
-    </div>
-    <div class="phone">Phone:
-      <span class="phone-content">+34 123 45 67</span>
-    </div>
-  </div>
-  <div class="contact">
-    <span class="address-book fa-stack fa-lg">
-      <i class="fa fa-address-book fa-stack-1x"></i>
-    </span>
-    <div class="name">
-      Name:
-      <span class="name-content">Garbiele Qualcosa</span>
-    </div>
-    <div class="position">Position:
-      <span class="position-content">Owner</span>
-    </div>
-    <div class="email">Email:
-      <a href="mailto:something@ladamavini.it" class="email-content">something@ladamavini.it</a>
-    </div>
-    <div class="phone">Phone:
-      <span class="phone-content">+34 123 45 67</span>
-    </div>
-  </div>
+  </ng-container>
 </div>

@@ -18,5 +18,15 @@ import { DescriptionModule } from '../description/description.module';
 export class ProducerModule {
   id: number;
   name: string;
+  address: string;
+  web_address: string;
   region: string;
+  appellation: string;
+  owner: string;
+  enologist: string;
+  agricultural_lead: string;
+  planted_hectares: string;
+  total_production: string;
+  description: string;
+  contacts: ContactsModule[];
 }
