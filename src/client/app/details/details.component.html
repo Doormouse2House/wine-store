@@ -1,0 +1,29 @@
+<div class="details">
+  <div class="heading">
+    <h1>Details</h1>
+  </div>
+  <div class="region">
+    Region:
+    <span *ngIf="producer" class="region-content">{{producer.region}}</span>
+  </div>
+  <div class="appellation">
+    Appellation:
+    <span *ngIf="producer" class="appellation-content">{{producer.appellation}}</span>
+  </div>
+  <div class="owner">
+    Owner:
+    <span *ngIf="producer" class="owner-content">{{producer.owner}}</span>
+  </div>
+  <div class="enologist">Enologist:
+    <span *ngIf="producer" class="enologist-content">{{producer.enologist}}</span>
+  </div>
+  <div class="agricultural-lead">Agricultural Lead:
+    <span *ngIf="producer" class="agricultural-lead-content">{{producer.agricultural_lead}}</span>
+  </div>
+  <div class="planted-hectares">Planted Hectares:
+    <span *ngIf="producer" class="planted-hectares-amount">{{producer.planted_hectares}}</span>
+  </div>
+  <div class="production">Total bottle production per annum:
+    <span *ngIf="producer" class="production-amount">{{producer.total_production}}</span>
+  </div>
+</div>

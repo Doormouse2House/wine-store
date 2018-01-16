@@ -1,0 +1,57 @@
+:host {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.87);
+  display: block;
+  height: 48px;
+  padding: 4px 16px;
+}
+
+h1 {
+  display: inline;
+  font-size: 25px;
+  font-weight: normal;
+  letter-spacing: 0.1px;
+  line-height: 48px;
+}
+
+.producer {
+  margin: auto;
+  text-align: center;
+}
+
+.ui-datagrid-column {
+  float: left;
+  width: 50%;
+}
+
+/* Edit Producer button */
+span.edit-producer {
+  float: left !important;
+  margin-top: 5px;
+}
+
+.fa-pencil-square-o {
+  color: red;
+}
+
+.fa-pencil-square-o:hover {
+  color: #660000;
+}
+
+
+/* Add Producer button */
+
+span.add-producer {
+  float: right !important;
+  margin-top: 5px;
+}
+
+.fa-plus-circle {
+  color: green
+}
+
+.fa-plus-circle:hover {
+  color: #004d00;
+}
+
+/* END */

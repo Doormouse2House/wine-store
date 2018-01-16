@@ -1,0 +1,17 @@
+<div class="producer">
+  <span class="edit-producer fa-stack fa-lg">
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+  </span>
+  <h1>Producer</h1>
+  <span class="add-producer fa-stack fa-lg">
+      <i class="fa fa-plus-circle fa-stack-1x"></i>
+  </span>
+</div>
+<div id="col1" class="ui-datagrid-column">
+  <sd-producer-name [producer]="selectedProducer"></sd-producer-name>
+  <sd-contacts [producer]="selectedProducer"></sd-contacts>
+</div>
+<div id="col2" class="ui-datagrid-column">
+  <sd-details [producer]="selectedProducer"></sd-details>
+  <sd-description [producer]="selectedProducer"></sd-description>
+</div>

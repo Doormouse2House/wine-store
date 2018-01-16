@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { TestBed } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 
@@ -13,25 +12,29 @@ import {
   RouterTestingModule
 } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { ProducerComponent } from './producer/producer.component';
 import { ToolbarComponent } from './shared/toolbar/toolbar.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { SearchbarComponent } from './shared/searchbar/searchbar.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { ProducerNameComponent } from './producerName/producerName.component';
+import { DetailsComponent } from './details/details.component';
+import { DescriptionComponent } from './description/description.component';
+import { FormsModule } from '@angular/forms';
 
 export function main() {
 
   describe('App component', () => {
 
     const config: Route[] = [
-      { path: '', component: HomeComponent },
-      { path: 'about', component: AboutComponent }
+      { path: '', component: ProducerComponent }
     ];
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [FormsModule, RouterTestingModule.withRoutes(config)],
-        declarations: [TestComponent, ToolbarComponent,
-          NavbarComponent, AppComponent,
-          HomeComponent, AboutComponent],
+        imports: [RouterTestingModule.withRoutes(config), FormsModule],
+        declarations: [TestComponent, ToolbarComponent, SearchbarComponent,
+          NavbarComponent, AppComponent, ProducerComponent, ContactsComponent,
+          ProducerNameComponent, DetailsComponent, DescriptionComponent],
         providers: [
           { provide: APP_BASE_HREF, useValue: '/' }
         ]
