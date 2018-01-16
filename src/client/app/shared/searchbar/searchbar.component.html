@@ -7,7 +7,7 @@
       <li (mouseover)="mouseOver($event)"
           *ngFor="let producer of producers; let i = index"
           [ngClass]="{'highlighted' : isHighlighted(i+1)}"
-          [attr.data-index]="i">{{producer.name}}</li>
+          [attr.data-index]="i">{{ producer.name }}</li>
     </ul>
   </div>
 </div>
