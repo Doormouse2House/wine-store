@@ -3,15 +3,15 @@
     <h1>Producer</h1>
   </div>
   <div class="name">
-    <h2 *ngIf="producer">{{producer.name}}</h2>
+    <h2 *ngIf="producer">{{ producer.name }}</h2>
   </div>
   <div class="address">
-    <p *ngIf="producer">{{producer.address}}</p>
+    <p *ngIf="producer">{{ producer.address }}</p>
   </div>
   <div class="producerWeb">
     <span class="fa-stack fa-lg">
       <i class="fa fa-home fa-stack-1x"></i>
     </span>
-    <a *ngIf="producer" href="{{producer.web_address}}">{{producer.web_address}}</a>
+    <a *ngIf="producer" href="{{ producer.web_address }}">{{ producer.web_address }}</a>
   </div>
 </div>
