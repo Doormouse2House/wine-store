@@ -4,6 +4,7 @@ import {
 } from '@angular/core/testing';
 
 import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 import { ProducerComponent } from './producer.component';
 import { ContactsComponent } from '../contacts/contacts.component';
@@ -13,7 +14,6 @@ import { DescriptionComponent } from '../description/description.component';
 import { SearchbarService } from '../shared/searchbar/searchbar.service';
 import { ProducerModule } from './producer.module';
 import { SearchbarComponent } from '../shared/searchbar/searchbar.component';
-import { Subject } from 'rxjs/Subject';
 
 export function main() {
   describe('Producer component', () => {
