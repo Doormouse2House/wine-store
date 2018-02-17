@@ -25,6 +25,7 @@ import { ProducerNameComponent } from './producerName/producerName.component';
 import { DetailsComponent } from './details/details.component';
 import { DescriptionComponent } from './description/description.component';
 import { SearchbarService } from './shared/searchbar/searchbar.service';
+import { ProducerApiService } from './shared/producer-api/producer-api.service';
 import { ProducerModule } from './producer/producer.module';
 
 export function main() {
@@ -32,6 +33,7 @@ export function main() {
   describe('App component', () => {
 
     const mockSearchbarService: MockSearchbarService = new MockSearchbarService();
+    const mockProducerApiService: MockProducerApiService = new MockProducerApiService();
     const config: Route[] = [
       { path: '', component: ProducerComponent }
     ];
@@ -43,7 +45,8 @@ export function main() {
           ProducerNameComponent, DetailsComponent, DescriptionComponent],
         providers: [
           { provide: APP_BASE_HREF, useValue: '/' },
-          { provide: SearchbarService, useValue: mockSearchbarService}
+          { provide: SearchbarService, useValue: mockSearchbarService},
+          { provide: ProducerApiService, useValue: mockProducerApiService}
         ]
       });
     });
@@ -96,5 +99,16 @@ class MockSearchbarService {
   }
   selectProducer(producer: ProducerModule) {
     //
+  }
+}
+
+class MockProducerApiService {
+  returnValue: string[];
+
+  getProducers(): Observable<string[]> {
+    return Observable.create((observer: any) => {
+      observer.next(this.returnValue);
+      observer.complete();
+    });
   }
 }

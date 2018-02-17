@@ -7,6 +7,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { SearchbarService } from './searchbar/searchbar.service';
+import { ProducerApiService } from './producer-api/producer-api.service';
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -22,7 +23,7 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [SearchbarService]
+      providers: [SearchbarService, ProducerApiService]
     };
   }
 }
