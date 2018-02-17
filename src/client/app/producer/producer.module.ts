@@ -21,7 +21,6 @@ export class ProducerModule {
   address: string;
   web_address: string;
   region: string;
-  appellation: string;
   owner: string;
   enologist: string;
   agricultural_lead: string;
