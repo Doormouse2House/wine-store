@@ -18,3 +18,7 @@ h1 {
   margin: auto;
   text-align: center;
 }
+
+.name, .address {
+  margin-left: 12px;
+}
