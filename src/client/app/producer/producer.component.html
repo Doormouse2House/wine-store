@@ -12,6 +12,6 @@
   <sd-contacts [producer]="selectedProducer"></sd-contacts>
 </div>
 <div id="col2" class="ui-datagrid-column">
-  <sd-details [producer]="selectedProducer"></sd-details>
+  <sd-details (producerVariableChange)="handleProducerUpdate($event)" [(producer)]="selectedProducer"></sd-details>
   <sd-description [producer]="selectedProducer"></sd-description>
 </div>

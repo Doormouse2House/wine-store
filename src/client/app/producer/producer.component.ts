@@ -27,5 +27,9 @@ export class ProducerComponent {
         this.selectedProducer = producer;
       }
     );
+
+  }
+  handleProducerUpdate(producer: ProducerModule) {
+    console.log(producer);
   }
 }

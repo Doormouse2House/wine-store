@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ProducerModule } from '../producer/producer.module';
 
 /**
@@ -12,4 +12,9 @@ import { ProducerModule } from '../producer/producer.module';
 })
 export class DetailsComponent {
   @Input() producer: ProducerModule;
+  @Output() producerVariableChange: EventEmitter<ProducerModule> = new EventEmitter();
+  onUpdate(event: any) {
+    this.producer[event.target.id] = event.target.value;
+    this.producerVariableChange.emit(this.producer);
+  }
 }

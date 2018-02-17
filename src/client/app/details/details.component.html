@@ -4,7 +4,8 @@
   </div>
   <div class="owner">
     Owner:
-    <span *ngIf="producer" class="owner-content">{{ producer.owner }}</span>
+    <!--<span *ngIf="producer" class="owner-content">{{ producer.owner }}</span>-->
+    <input id="name" *ngIf="producer" (blur)="onUpdate($event)" value="{{ producer.name }}">
   </div>
   <div class="enologist">Enologist:
     <span *ngIf="producer" class="enologist-content">{{ producer.enologist }}</span>

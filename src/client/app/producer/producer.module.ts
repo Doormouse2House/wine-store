@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { ProducerComponent } from './producer.component';
 import { ProducerRoutingModule } from './producer-routing.module';
@@ -10,12 +11,13 @@ import { DescriptionModule } from '../description/description.module';
 
 
 @NgModule({
-  imports: [CommonModule, ProducerRoutingModule, ProducerNameModule, ContactsModule, DetailsModule,
+  imports: [CommonModule, FormsModule, ProducerRoutingModule, ProducerNameModule, ContactsModule, DetailsModule,
   DescriptionModule],
   declarations: [ProducerComponent],
   exports: [ProducerComponent],
 })
 export class ProducerModule {
+  [k: string]: any;
   id: number;
   name: string;
   address: string;
