@@ -48,3 +48,13 @@ span.fa-stack {
 .fa-plus-circle:hover {
   color: #004d00;
 }
+
+div {
+  margin: 7px 0;
+  font-weight: bold;
+}
+
+div > span {
+  font-weight: normal;
+}
+
