@@ -42,5 +42,17 @@ export function main() {
       expect(actualProducers).toEqual(expectedProducers);
 
     }));
+    it('should call HTTP /producer/:id when set() is called', async(() => {
+      const expectedProducer: ProducerModule = new ProducerModule();
+      expectedProducer.id = 2;
+      expectedProducer.name = 'test_name';
+      let actualProducer: ProducerModule = null;
+      producerApiService.set({producer: expectedProducer, field: 'name'})
+        .subscribe((returnedProducer: ProducerModule) => {
+          actualProducer = returnedProducer;
+      });
+      httpMock.expectOne(producerApiService.producerRoot + '/' + '2').flush(expectedProducer);
+      expect(actualProducer).toEqual(expectedProducer);
+    }));
   });
 }

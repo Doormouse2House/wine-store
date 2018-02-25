@@ -14,11 +14,13 @@ import { DescriptionComponent } from '../description/description.component';
 import { SearchbarService } from '../shared/searchbar/searchbar.service';
 import { ProducerModule } from './producer.module';
 import { SearchbarComponent } from '../shared/searchbar/searchbar.component';
+import { ProducerApiService } from '../shared/producer-api/producer-api.service';
 
 export function main() {
   describe('Producer component', () => {
 
     const mockSearchbarService: MockSearchbarService = new MockSearchbarService();
+    const mockProducerApiService: MockProducerApiService = new MockProducerApiService();
     beforeEach(() => {
 
       TestBed.configureTestingModule({
@@ -26,7 +28,8 @@ export function main() {
         declarations: [ProducerComponent, ContactsComponent, ProducerNameComponent, DetailsComponent,
           DescriptionComponent, SearchbarComponent],
         providers: [
-          { provide: SearchbarService, useValue: mockSearchbarService}
+          { provide: SearchbarService, useValue: mockSearchbarService },
+          { provide: ProducerApiService, useValue: mockProducerApiService }
         ]
       });
 
@@ -50,6 +53,27 @@ export function main() {
             const compiled = fixture.nativeElement;
 
             expect(compiled).toBeTruthy();
+          });
+      })
+    );
+
+    it('should update the producer via the API when there is an update',
+      async(() => {
+        TestBed
+          .compileComponents()
+          .then(() => {
+            const fixture = TestBed.createComponent(ProducerComponent);
+            const producerInstance = fixture.componentInstance;
+
+            producerInstance.handleProducerUpdate(
+              {
+                producer: mockProducerApiService.producer,
+                field: 'name'
+              });
+            mockProducerApiService.emitProducer();
+
+            expect(producerInstance.selectedProducer).toEqual(mockProducerApiService.producer);
+
           });
       })
     );
@@ -83,5 +107,21 @@ class MockSearchbarService {
   }
   selectProducer(producer: ProducerModule) {
     //
+  }
+}
+
+
+class MockProducerApiService {
+  producerSource = new Subject<ProducerModule>();
+  producerObservable$ = this.producerSource.asObservable();
+  producer: ProducerModule = new ProducerModule();
+  emitProducer() {
+    this.producer.id = 1;
+    this.producer.name = 'test';
+    this.producerSource.next(this.producer);
+  }
+  set(producer: ProducerModule): Observable<ProducerModule> {
+    this.producer = producer;
+    return this.producerObservable$;
   }
 }

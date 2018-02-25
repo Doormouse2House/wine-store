@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator/do';  // for debugging
@@ -49,6 +49,25 @@ export class ProducerApiService {
       }
       return Observable.throw(error.message);
     }
+  }
+
+  /**
+   * Maps to the HTTP API's PUT /product/id call
+   * @returns {Observable<ProducerModule>}
+   * @param update
+   */
+  set(update: {producer: ProducerModule, field: string}): Observable<ProducerModule> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    const data: any = {};
+    console.log(this.producerRoot + '/' + update.producer.id);
+    console.log(update.producer);
+    data[update.field] = update.producer[update.field];
+    console.log(JSON.stringify(data));
+    return this.http.put<ProducerModule>(this.producerRoot + '/' + update.producer.id,
+      JSON.stringify(data), httpOptions)
+      .catch(this.handleError);
   }
 
   /**

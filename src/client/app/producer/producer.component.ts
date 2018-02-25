@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { ProducerModule } from './producer.module';
 import { SearchbarService } from '../shared/searchbar/searchbar.service';
+import { ProducerApiService } from '../shared/producer-api/producer-api.service';
 
 /**
  * This class represents the lazy loaded ProducerComponent.
@@ -20,8 +21,9 @@ export class ProducerComponent {
    * SearchbarService.
    *
    * @param {SearchbarService} searchbarService - The injected SearchbarService.
+   * @param {ProducerApiService} producerApiService
    */
-  constructor(public searchbarService: SearchbarService) {
+  constructor(public searchbarService: SearchbarService, private  producerApiService: ProducerApiService) {
     this.searchbarService.producerSelected$.subscribe(
       producer => {
         this.selectedProducer = producer;
@@ -29,7 +31,10 @@ export class ProducerComponent {
     );
 
   }
-  handleProducerUpdate(producer: ProducerModule) {
-    console.log(producer);
+  handleProducerUpdate(update: {producer: ProducerModule, field: string}) {
+    console.log('triggered handleProducerUpdates');
+    this.producerApiService.set(update).subscribe((producer) => {
+      this.selectedProducer = producer;
+    });
   }
 }
