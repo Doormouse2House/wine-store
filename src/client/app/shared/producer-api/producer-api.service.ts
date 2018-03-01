@@ -36,7 +36,9 @@ export class ProducerApiService {
   get(term: string): Observable<ProducerModule[]> {
     if (term.length > 0) {
       const url: string = this.producerRoot + `?where={"name":{"contains":"${term}"}}`;
-      console.log('HTTP GET: ', url);
+      if (Config.ENV = 'DEV') {
+        console.log('HTTP GET: ', url);
+      }
       return this.http.get<ProducerModule[]>(url)
       //              .do(data => console.log('server data:', data))  // debug
         .catch(this.handleError);
@@ -61,10 +63,12 @@ export class ProducerApiService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     const data: any = {};
-    console.log(this.producerRoot + '/' + update.producer.id);
-    console.log(update.producer);
     data[update.field] = update.producer[update.field];
-    console.log(JSON.stringify(data));
+    if (Config.ENV = 'DEV') {
+      console.log(this.producerRoot + '/' + update.producer.id);
+      console.log(update.producer);
+      console.log(JSON.stringify(data));
+    }
     return this.http.put<ProducerModule>(this.producerRoot + '/' + update.producer.id,
       JSON.stringify(data), httpOptions)
       .catch(this.handleError);

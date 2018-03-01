@@ -32,7 +32,6 @@ export class ProducerComponent {
 
   }
   handleProducerUpdate(update: {producer: ProducerModule, field: string}) {
-    console.log('triggered handleProducerUpdates');
     this.producerApiService.set(update).subscribe((producer) => {
       this.selectedProducer = producer;
     });
