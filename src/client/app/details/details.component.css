@@ -25,6 +25,11 @@ div {
   font-weight: bold;
 }
 
-div > span {
-  font-weight: normal;
+input {
+  height: 30px;
+  border-color: #eaeaea;
+}
+
+input:focus {
+  border-color: #106cc8;
 }

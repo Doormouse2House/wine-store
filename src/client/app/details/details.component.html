@@ -3,20 +3,23 @@
     <h1>Details</h1>
   </div>
   <div class="owner">
-    Owner:
-    <!--<span *ngIf="producer" class="owner-content">{{ producer.owner }}</span>-->
-    <input id="name" *ngIf="producer" (blur)="onUpdate($event)" value="{{ producer.name }}">
+    <span>Owner:</span>
+    <input id="owner" *ngIf="producer" (blur)="onUpdate($event)" value="{{ producer.owner }}">
   </div>
-  <div class="enologist">Enologist:
-    <span *ngIf="producer" class="enologist-content">{{ producer.enologist }}</span>
+  <div class="enologist">
+    <span>Enologist:</span>
+    <input *ngIf="producer" id="enologist" (blur)="onUpdate($event)" value="{{ producer.enologist }}">
   </div>
-  <div class="agricultural-lead">Agricultural Lead:
-    <span *ngIf="producer" class="agricultural-lead-content">{{ producer.agricultural_lead }}</span>
+  <div class="agricultural-lead">
+    <span>Agricultural Lead:</span>
+    <input *ngIf="producer" id="agricultural_lead" (blur)="onUpdate($event)" value="{{ producer.agricultural_lead }}">
   </div>
-  <div class="planted-hectares">Planted Hectares:
-    <span *ngIf="producer" class="planted-hectares-amount">{{ producer.planted_hectares }}</span>
+  <div class="planted-hectares">
+    <span>Planted Hectares:</span>
+    <input *ngIf="producer" id="planted_hectares" (blur)="onUpdate($event)" value="{{ producer.planted_hectares }}">
   </div>
-  <div class="production">Total bottle production per annum:
-    <span *ngIf="producer" class="production-amount">{{ producer.total_production }}</span>
+  <div class="production">
+    <span>Total bottle production per annum:</span>
+    <input *ngIf="producer" id="total_production" (blur)="onUpdate($event)" value="{{ producer.total_production }}">
   </div>
 </div>
