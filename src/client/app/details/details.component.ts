@@ -15,7 +15,7 @@ export class DetailsComponent {
   @Output() producerVariableChange: EventEmitter<{}> = new EventEmitter();
   onUpdate(event: any) {
     console.log(event);
-    this.producer[event.target.id] = event.target.value;
+    this.producer[event.target.id] = event.target.valueAsNumber || event.target.value;
     this.producerVariableChange.emit({ producer: this.producer, field: event.target.id});
   }
 }

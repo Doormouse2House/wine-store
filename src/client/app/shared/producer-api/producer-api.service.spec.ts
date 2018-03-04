@@ -54,5 +54,17 @@ export function main() {
       httpMock.expectOne(producerApiService.producerRoot + '/' + '2').flush(expectedProducer);
       expect(actualProducer).toEqual(expectedProducer);
     }));
+    it('should handle setting numbers and strings', async(() => {
+      const expectedProducer: ProducerModule = new ProducerModule();
+      expectedProducer.id = 3;
+      expectedProducer.planted_hectares = 1;
+      let actualProducer: ProducerModule = null;
+      producerApiService.set({producer: expectedProducer, field: 'planted_hectares'})
+        .subscribe((returnedProducer: ProducerModule) => {
+          actualProducer = returnedProducer;
+        });
+      httpMock.expectOne(producerApiService.producerRoot + '/' + '3').flush(expectedProducer);
+      expect(actualProducer).toEqual(expectedProducer);
+    }));
   });
 }

@@ -26,8 +26,8 @@ export class ProducerModule {
   owner: string;
   enologist: string;
   agricultural_lead: string;
-  planted_hectares: string;
-  total_production: string;
+  planted_hectares: number;
+  total_production: number;
   description: string;
   contacts: ContactsModule[];
 }

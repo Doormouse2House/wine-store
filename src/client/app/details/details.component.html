@@ -16,10 +16,10 @@
   </div>
   <div class="planted-hectares">
     <span>Planted Hectares:</span>
-    <input *ngIf="producer" id="planted_hectares" (blur)="onUpdate($event)" value="{{ producer.planted_hectares }}">
+    <input type="number" *ngIf="producer" id="planted_hectares" (blur)="onUpdate($event)" value="{{ producer.planted_hectares }}">
   </div>
   <div class="production">
     <span>Total bottle production per annum:</span>
-    <input *ngIf="producer" id="total_production" (blur)="onUpdate($event)" value="{{ producer.total_production }}">
+    <input type="number" *ngIf="producer" id="total_production" (blur)="onUpdate($event)" value="{{ producer.total_production }}">
   </div>
 </div>
