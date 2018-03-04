@@ -25,11 +25,10 @@ div {
   font-weight: bold;
 }
 
-input {
-  height: 30px;
-  border-color: #eaeaea;
+span {
+  font-weight: normal;
 }
 
-input:focus {
-  border-color: #106cc8;
+p {
+  display: inline;
 }

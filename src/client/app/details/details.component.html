@@ -2,24 +2,19 @@
   <div class="heading">
     <h1>Details</h1>
   </div>
-  <div class="owner">
-    <span>Owner:</span>
-    <input id="owner" *ngIf="producer" (blur)="onUpdate($event)" value="{{ producer.owner }}">
+  <div class="owner">Owner:
+    <p *ngIf="producer" id="owner" (blur)="onUpdate($event)" contenteditable="true">{{ producer.owner }}</p>
   </div>
-  <div class="enologist">
-    <span>Enologist:</span>
-    <input *ngIf="producer" id="enologist" (blur)="onUpdate($event)" value="{{ producer.enologist }}">
+  <div class="enologist">Enologist:
+    <p *ngIf="producer" id="enologist" (blur)="onUpdate($event)" contenteditable="true">{{ producer.enologist }}</p>
   </div>
-  <div class="agricultural-lead">
-    <span>Agricultural Lead:</span>
-    <input *ngIf="producer" id="agricultural_lead" (blur)="onUpdate($event)" value="{{ producer.agricultural_lead }}">
+  <div class="agricultural-lead">Agricultural Lead:
+    <p *ngIf="producer" id="agricultural_lead" (blur)="onUpdate($event)" contenteditable="true">{{ producer.agricultural_lead }}</p>
   </div>
-  <div class="planted-hectares">
-    <span>Planted Hectares:</span>
-    <input type="number" *ngIf="producer" id="planted_hectares" (blur)="onUpdate($event)" value="{{ producer.planted_hectares }}">
+  <div class="planted-hectares">Planted Hectares:
+    <p *ngIf="producer" id="planted_hectares" (blur)="onUpdate($event)" contenteditable="true">{{ producer.planted_hectares }}</p>
   </div>
-  <div class="production">
-    <span>Total bottle production per annum:</span>
-    <input type="number" *ngIf="producer" id="total_production" (blur)="onUpdate($event)" value="{{ producer.total_production }}">
+  <div class="production">Total bottle production per annum:
+    <p *ngIf="producer" id="total_production" (blur)="onUpdate($event)" contenteditable="true">{{ producer.total_production }}</p>
   </div>
 </div>

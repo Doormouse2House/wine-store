@@ -44,7 +44,7 @@ export function main() {
             const event = {
               target: {
                 id: expectedId,
-                value: expectedValue
+                textContent: expectedValue
               }
             };
 

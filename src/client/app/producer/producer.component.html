@@ -8,7 +8,7 @@
   </span>
 </div>
 <div id="col1" class="ui-datagrid-column">
-  <sd-producer-name [producer]="selectedProducer"></sd-producer-name>
+  <sd-producer-name (producerVariableChange)="handleProducerUpdate($event)" [(producer)]="selectedProducer"></sd-producer-name>
   <sd-contacts [producer]="selectedProducer"></sd-contacts>
 </div>
 <div id="col2" class="ui-datagrid-column">
