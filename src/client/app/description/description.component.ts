@@ -13,6 +13,7 @@ import { Config } from '../shared/config/env.config';
 })
 export class DescriptionComponent {
   @Input() producer: ProducerModule;
+  @Input() isEditable: boolean;
   @Output() producerVariableChange: EventEmitter<{}> = new EventEmitter();
   onUpdate(event: any) {
     if (Config.ENV = 'DEV') {

@@ -22,7 +22,21 @@ h1 {
 
 div {
   margin: 7px 0;
-  font-weight: bold;
+}
+
+div.key {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+div.value {
+  font-weight: normal;
+}
+
+div.editable {
+  font-weight: normal;
+  font-style: italic;
+  outline: #c9676766 dotted;
 }
 
 div > span {

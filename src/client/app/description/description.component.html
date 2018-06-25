@@ -3,6 +3,7 @@
     <h1>Description</h1>
   </div>
   <div class="description-content">
-    <p *ngIf="producer" id="description" (blur)="onUpdate($event)" contenteditable="true">{{ producer.description }}</p>
+    <div *ngIf="producer" id="description" (blur)="onUpdate($event)" [ngClass]="{'editable': isEditable}"
+       [attr.contenteditable]="isEditable">{{ producer.description }}</div>
   </div>
 </div>

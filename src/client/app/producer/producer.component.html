@@ -15,5 +15,6 @@
 <div id="col2" class="ui-datagrid-column">
   <sd-details (producerVariableChange)="handleProducerUpdate($event)" [(isEditable)]="isEditable"
               [(producer)]="selectedProducer"></sd-details>
-  <sd-description (producerVariableChange)="handleProducerUpdate($event)" [(producer)]="selectedProducer"></sd-description>
+  <sd-description (producerVariableChange)="handleProducerUpdate($event)" [(isEditable)]="isEditable"
+                  [(producer)]="selectedProducer"></sd-description>
 </div>
