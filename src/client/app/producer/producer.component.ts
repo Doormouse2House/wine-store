@@ -15,6 +15,7 @@ import { ProducerApiService } from '../shared/producer-api/producer-api.service'
 })
 export class ProducerComponent {
   selectedProducer: ProducerModule;
+  isEditable: boolean;
 
   /**
    * Creates an instance of the ProducerComponent with the injected
@@ -24,12 +25,16 @@ export class ProducerComponent {
    * @param {ProducerApiService} producerApiService
    */
   constructor(public searchbarService: SearchbarService, private  producerApiService: ProducerApiService) {
+    this.isEditable = false;
     this.searchbarService.producerSelected$.subscribe(
       producer => {
         this.selectedProducer = producer;
       }
     );
 
+  }
+  toggleEditable(isEditable: boolean) {
+    this.isEditable = !isEditable;
   }
   handleProducerUpdate(update: {producer: ProducerModule, field: string}) {
     this.producerApiService.set(update).subscribe((producer) => {

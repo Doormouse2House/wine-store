@@ -2,19 +2,29 @@
   <div class="heading">
     <h1>Details</h1>
   </div>
-  <div class="owner">Owner:
-    <p *ngIf="producer" id="owner" (blur)="onUpdate($event)" contenteditable="true">{{ producer.owner }}</p>
+  <div class="owner">
+    <div class="key">Owner:</div>
+    <div class="value" *ngIf="producer" id="owner" (blur)="onUpdate($event)" [ngClass]="{'editable': isEditable}"
+         [attr.contenteditable]="isEditable">{{ producer.owner }}</div>
   </div>
-  <div class="enologist">Enologist:
-    <p *ngIf="producer" id="enologist" (blur)="onUpdate($event)" contenteditable="true">{{ producer.enologist }}</p>
+  <div class="enologist">
+    <div class="key">Enologist:</div>
+    <div class="value" *ngIf="producer" id="enologist" (blur)="onUpdate($event)" [ngClass]="{'editable': isEditable}"
+         [attr.contenteditable]="isEditable">{{ producer.enologist }}</div>
   </div>
-  <div class="agricultural-lead">Agricultural Lead:
-    <p *ngIf="producer" id="agricultural_lead" (blur)="onUpdate($event)" contenteditable="true">{{ producer.agricultural_lead }}</p>
+  <div class="agricultural-lead">
+    <div class="key">Agricultural Lead:</div>
+    <div class="value" *ngIf="producer" id="agricultural_lead" (blur)="onUpdate($event)" [ngClass]="{'editable': isEditable}"
+         [attr.contenteditable]="isEditable">{{ producer.agricultural_lead }}</div>
   </div>
-  <div class="planted-hectares">Planted Hectares:
-    <p *ngIf="producer" id="planted_hectares" (blur)="onUpdate($event)" contenteditable="true">{{ producer.planted_hectares }}</p>
+  <div class="planted-hectares">
+    <div class="key">Planted Hectares:</div>
+    <div class="value" *ngIf="producer" id="planted_hectares" (blur)="onUpdate($event)" [ngClass]="{'editable': isEditable}"
+         [attr.contenteditable]="isEditable">{{ producer.planted_hectares }}</div>
   </div>
-  <div class="production">Total bottle production per annum:
-    <p *ngIf="producer" id="total_production" (blur)="onUpdate($event)" contenteditable="true">{{ producer.total_production }}</p>
+  <div class="production">
+    <div class="key">Total bottle production per annum:</div>
+    <div class="value" *ngIf="producer" id="total_production" (blur)="onUpdate($event)" [ngClass]="{'editable': isEditable}"
+         [attr.contenteditable]="isEditable">{{ producer.total_production }}</div>
   </div>
 </div>
